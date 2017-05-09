@@ -7,7 +7,13 @@
     var maxItem = 3;
 
     $scope.checkIfTooMuch = function(){
+      if($scope.items == null){
+        $scope.checkTooMuchResult = "Please enter data first";
+        $scope.checkTooMuchResultClass = "text-danger";
+        return;
+      }
       var numberOfItems = getNumberOfItems($scope.items)
+
       if(numberOfItems > maxItem){
 
         //too much no. of item. format red
